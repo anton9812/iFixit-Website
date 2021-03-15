@@ -1,0 +1,2879 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Covers all special symbols -->
+        <meta charset="UTF-8">
+        <!-- When turning to landscape or portrait the content does not zoom in -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <!-- In order for jQuery Mobile to work: -->
+        <link rel="stylesheet" href="themes/theme.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+    </head>
+
+
+    <style>
+
+        .ui-content-a {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 80vh;
+        } 
+
+        .footer {
+            position:fixed;
+            bottom:0;
+            width:100%;
+            height:50px;
+        }
+
+        .div {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -120px;
+            margin-left: -200px;
+        } 
+
+        .ui-li-thumb {
+            position: fixed;
+            top: 50%;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
+        .para {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .favourite-content {
+
+        }
+
+        .number {
+            margin-left: 5%;
+        }
+
+        .email {
+            margin-right: 5%;
+        }
+
+        .iframe {
+            display:block;
+            width: 100%;
+            height: 50%;
+            margin: 0 auto;
+            border: 0;
+
+
+        }
+
+        .map {
+            width: 100%;
+            height: 50%;
+        }
+
+        * {
+            font-family: "Lucida Sans";
+
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+
+        }
+
+
+    </style>
+    <body>        
+
+        <!-- HOME PAGE -->
+        <div data-role="page" id="Home">
+
+            <div data-role="header" data-position="fixed" class="">
+                <img src="themes/images/Logo.png" width="40px" height="40px">
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content-a" align="center">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><img src="themes/images/individualpic.png" alt="Individual" height="60" width="75px"><br>
+                        <a href="#Individual" class="ui-btn ui-btn-inline" data-transition="slide" style="font-size:125%;">Individual</a><br>
+                    </div>
+
+                    <div class="ui-block-b">
+                        <img src="themes/images/contractorpic.png" alt="Contractor" height="60" width="75px"><br>
+                        <a href="#Contractor" class="ui-btn ui-btn-inline" data-transition="slide" style="font-size:125%;">Contractor</a>
+                    </div>
+
+                </div>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer"> <!-- makes the footer stay at the bottom -->
+                <h1>ASAP Fix It</h1>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL -->
+        <div data-role="page" id="Individual">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="50px" height="50px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+            <a href="#Home" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="border: 0;" ><img src="themes/images/back.png" style="width: 20px;"></a> <!-- Back button -->
+            <div role="main" class="ui-content" align="center">
+
+                <img src="themes/images/questionMark.png" alt="Tick" height="70%" width="70%"><br>
+                <hr>
+                <b>What do we do?</b>
+                <hr>
+                We're here to put you in touch with the right people. 
+                <br>
+                <br>
+                Whether you need your house re-decorated or need a dishwasher installed... 
+                <br>
+                <br>
+                <b>"We Know A Guy!"</b>
+                <hr>
+                <br>
+                <a href="#Search" align="center" class="ui-btn ui-btn-inline">
+                    <img src="themes/images/search.png" alt="search" height="20%" width="20%"><br>
+                    Find a Professional
+                </a>
+                <br>
+                <a href="#Bookings" align="center" class="ui-btn ui-btn-inline">
+                    <img src="themes/images/booking.png" alt="booking" height="20%" width="20%"><br>
+                    View Bookings 
+                </a>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- INDIVIDUAL SEARCH -->
+        <div data-role="page" id="Search" class="search">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content" align="center" data-position="fixed">
+                <ul class="ui-alt-thumb" data-role="listview" data-inset="true" data-position="fixed">
+
+                    <li><a href="#Plumbing"><img src="themes/images/PlumbingIcon.png" width="50px" height="50px" class="ui-li-thumb" style="margin: 20px;">Plumbing</a></li>
+                    <li><a href="#Repairs"><img src="themes/images/RepairsIcon.png" width="50px" height="50px" class="ui-li-thumb" style="margin: 20px;">Repairs</a></li>
+                    <li><a href="#Electricals"><img src="themes/images/ElectricalsIcon.png" width="50px" height="50px" class="ui-li-thumb" style="margin: 20px;">Electricals</a></li>
+                    <li><a href="#Painting"><img src="themes/images/PaintingIcon.png" width="50px" height="50px" class="ui-li-thumb" style="margin: 20px;">Painting</a></li>
+                    <li><a href="#Tiling"><img src="themes/images/TilingIcon.png" width="50px" height="50px" class="ui-li-thumb" style="margin: 20px;">Tiling</a></li>
+                    <li><a href="#Outdoors"><img src="themes/images/OutdoorsIcon.png" width="50px" height="50px" class="ui-li-thumb" style="margin: 20px;">Outdoors</a></li>
+
+                </ul>
+
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- INDIVIDUAL PLUMBING -->
+        <div data-role="page" id="Plumbing" class="plumbing">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+            <a href="#Search" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="border: 0;" ><img src="themes/images/back.png" style="width: 20px;"></a> <!-- Back button -->
+
+
+            <div data-filtertext = "true" data-filter="true" data-filter="true" data-inset="true">
+                <div data-role="collapsible">
+                    <h4>Filter Price/Availability</h4>
+                    <div class="buttons">
+
+                        <br>
+                        <h4 style="margin-bottom: 0;">Days of the week: </h4>
+                        <br>
+                        <button type="button" data-inline="true">M</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">W</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">F</button>
+                        <button type="button" data-inline="true">S</button>
+                        <button type="button" data-inline="true">S</button>
+
+                    </div>
+                    <div data-role="rangeslider">
+                        <h4 style="margin-bottom: 20px;">Price: </h4>
+                        <input type="range" name="price-min" id="price-min" value="20" min="0" max="30">
+
+                        <input type="range" name="price-max" id="price-max" value="45" min="20" max="45">
+                    </div>
+                </div>
+                <ul data-role="listview" id="profile1">
+                    <li><a href="#profile">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Jason Stanley</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £30 per hour
+                            <br>
+                            Years of experience: 10
+                            <br>
+                            Available on: Tues, Thurs and Sat.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+
+                </ul>
+
+                <ul data-role="listview" id="profile2">
+                    <li><a href="#profile2">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Steve Johnson</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 7
+                            <br>
+                            Available on: Tues, Weds and Fri.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview" id="profile3">
+                    <li><a href="#profile3">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Ashleigh Jones</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 2
+                            <br>
+                            Available on: Fri, Sat and Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview" id="profile4">
+                    <li><a href="#profile4">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Damien White</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £25 per hour
+                            <br>
+                            Years of experience: 20
+                            <br>
+                            Available on: Mon, Thurs and Sat.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview" id="profile9">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">John Jones</h3>
+                        <p align="left">Bath</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 2
+                            <br>
+                            Available on: Tues, Thurs, Fri, Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview" id="profile10">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Frank Bramley</h3>
+                        <p align="left">Brighton</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £30 per hour
+                            <br>
+                            Years of experience: 4
+                            <br>
+                            Available on: Sat, Sun, Mon.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview" id="profile11">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Mohammed Salah</h3>
+                        <p align="left">Manchester</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £35 per hour
+                            <br>
+                            Years of experience: 12
+                            <br>
+                            Available on: Mon, Tues, Wed.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview" id="profile12">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Dennis Simpson</h3>
+                        <p align="left">Bedford</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 5
+                            <br>
+                            Available on: Tues, Thurs, Fri.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+            </div>    
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- INDIVIDUAL ELECTRICALS -->
+        <div data-role="page" id="Electricals" class="electricals">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <a href="#Search" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline">Back</a> <!-- Back button -->
+            <div data-filtertext = "true" data-filter="true" data-filter="true" data-inset="true">
+                <div data-role="collapsible">
+                    <h4>Filter Price/Availability</h4>
+                    <div class="buttons">
+
+                        <br>
+                        <h4 style="margin-bottom: 0;">Days of the week: </h4>
+                        <br>
+                        <button type="button" data-inline="true">M</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">W</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">F</button>
+                        <button type="button" data-inline="true">S</button>
+                        <button type="button" data-inline="true">S</button>
+
+                    </div>
+                    <div data-role="rangeslider">
+                        <h4 style="margin-bottom: 20px;">Price: </h4>
+                        <input type="range" name="price-min" id="price-min" value="20" min="0" max="30">
+
+                        <input type="range" name="price-max" id="price-max" value="45" min="20" max="45">
+                    </div>
+                </div>
+
+
+                <ul data-role="listview" >
+                    <li><a href="#" >
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Laura Rakes</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 2
+                            <br>
+                            Available on: Sat, Sun.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Harry Thorns</h3>
+                        <p align="left">Luton</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 1
+                            <br>
+                            Available on: Mon, Wed, Fri.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Kate Moors</h3>
+                        <p align="left">Milton Keynes</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 10
+                            <br>
+                            Available on: Thurs, Sat.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Joe Forbes</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 13
+                            <br>
+                            Available on: Fri, Sat, Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Bob Green</h3>
+                        <p align="left">Kent</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 1
+                            <br>
+                            Available on: Mon, Tues, Wed.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Barry Doctors</h3>
+                        <p align="left">Bradford</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 1
+                            <br>
+                            Available on: Mon, Fri.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Thomas Hounds</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 3
+                            <br>
+                            Available on: Sun, Mon, Tues.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">George Goons</h3>
+                        <p align="left">Bedford</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 8
+                            <br>
+                            Available on: Mon, Tues.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+            </div>    
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- INDIVIDUAL REPAIRS -->
+        <div data-role="page" id="Repairs" class="repairs">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <a href="#Search" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline">Back</a> <!-- Back button -->
+            <div data-filtertext = "true" data-filter="true" data-filter="true" data-inset="true">
+
+                <div data-role="collapsible">
+                    <h4>Filter Price/Availability</h4>
+                    <div class="buttons">
+
+                        <br>
+                        <h4 style="margin-bottom: 0;">Days of the week: </h4>
+                        <br>
+                        <button type="button" data-inline="true">M</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">W</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">F</button>
+                        <button type="button" data-inline="true">S</button>
+                        <button type="button" data-inline="true">S</button>
+
+                    </div>
+                    <div data-role="rangeslider">
+                        <h4 style="margin-bottom: 20px;">Price: </h4>
+                        <input type="range" name="price-min" id="price-min" value="20" min="0" max="30">
+
+                        <input type="range" name="price-max" id="price-max" value="45" min="20" max="45">
+                    </div>
+                </div>
+
+
+                <ul data-role="listview" >
+                    <li><a href="#" >
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Borris Johns</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 5
+                            <br>
+                            Available on: Tuesdays, Wednesdays.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Gary Gates</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 5
+                            <br>
+                            Available on: Saturdays, Sundays.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Steven Smith</h3>
+                        <p align="left">Liverpool</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £25 per hour
+                            <br>
+                            Years of experience: 7
+                            <br>
+                            Available on: Fridays.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Jamie Gerrard</h3>
+                        <p align="left">Manchester</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £30 per hour
+                            <br>
+                            Years of experience: 8
+                            <br>
+                            Available on: Mondays, Thursdays, Fridays...
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Adam Apples</h3>
+                        <p align="left">Northampton</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 3
+                            <br>
+                            Available on: Mondays, Tuesdays.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Katie Kent</h3>
+                        <p align="left">Kent</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £25 per hour
+                            <br>
+                            Years of experience: 5
+                            <br>
+                            Available on: Mondays, Tuesdays, Wednesdays...
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Tom Barks</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £30 per hour
+                            <br>
+                            Years of experience: 6
+                            <br>
+                            Available on: Sunday, Monday, Tuesdays...
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Tim Clapton</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 3
+                            <br>
+                            Available on: Thursdays, Fridays, Sunday.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+            </div>    
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- INDIVIDUAL PAINTING -->
+        <div data-role="page" id="Painting" class="painting">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <a href="#Search" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline">Back</a> <!-- Back button -->
+            <div data-filtertext = "true" data-filter="true" data-filter="true" data-inset="true">
+
+                <div data-role="collapsible">
+                    <h4>Filter Price/Availability</h4>
+                    <div class="buttons">
+
+                        <br>
+                        <h4 style="margin-bottom: 0;">Days of the week: </h4>
+                        <br>
+                        <button type="button" data-inline="true">M</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">W</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">F</button>
+                        <button type="button" data-inline="true">S</button>
+                        <button type="button" data-inline="true">S</button>
+
+                    </div>
+                    <div data-role="rangeslider">
+                        <h4 style="margin-bottom: 20px;">Price: </h4>
+                        <input type="range" name="price-min" id="price-min" value="20" min="0" max="30">
+
+                        <input type="range" name="price-max" id="price-max" value="45" min="20" max="45">
+                    </div>
+                </div>
+
+
+                <ul data-role="listview" >
+                    <li><a href="#" >
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Laura Rakes</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 2
+                            <br>
+                            Available on: Sat, Sun.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Harry Thorns</h3>
+                        <p align="left">Luton</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 1
+                            <br>
+                            Available on: Mon, Wed, Fri.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Kate Moors</h3>
+                        <p align="left">Milton Keynes</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 10
+                            <br>
+                            Available on: Thurs, Sat.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Joe Forbes</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 13
+                            <br>
+                            Available on: Fri, Sat, Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Bob Green</h3>
+                        <p align="left">Kent</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 1
+                            <br>
+                            Available on: Mon, Tues, Wed.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Barry Doctors</h3>
+                        <p align="left">Bradford</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 1
+                            <br>
+                            Available on: Mon, Fri.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Thomas Hounds</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 3
+                            <br>
+                            Available on: Sun, Mon, Tues.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">George Goons</h3>
+                        <p align="left">Bedford</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 8
+                            <br>
+                            Available on: Mon, Tues.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+            </div>    
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL TILING -->
+        <div data-role="page" id="Tiling" class="tiling">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <a href="#Search" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline">Back</a> <!-- Back button -->
+            <div data-filtertext = "true" data-filter="true" data-filter="true" data-inset="true">
+
+                <div data-role="collapsible">
+                    <h4>Filter Price/Availability</h4>
+                    <div class="buttons">
+
+                        <br>
+                        <h4 style="margin-bottom: 0;">Days of the week: </h4>
+                        <br>
+                        <button type="button" data-inline="true">M</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">W</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">F</button>
+                        <button type="button" data-inline="true">S</button>
+                        <button type="button" data-inline="true">S</button>
+
+                    </div>
+                    <div data-role="rangeslider">
+                        <h4 style="margin-bottom: 20px;">Price: </h4>
+                        <input type="range" name="price-min" id="price-min" value="20" min="0" max="30">
+
+                        <input type="range" name="price-max" id="price-max" value="45" min="20" max="45">
+                    </div>
+                </div>
+
+                <ul data-role="listview" >
+                    <li><a href="#" >
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">James Jameson</h3>
+                        <p align="left">Hemel Hempstead</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 4
+                            <br>
+                            Available on: Mon, Sat, Sun.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Dave Morrison</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 10
+                            <br>
+                            Available on: Mon, Fri.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Mark Mates</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 15
+                            <br>
+                            Available on: Mon, Tues, Wed.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Ronald Moogs</h3>
+                        <p align="left">Essex</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 6
+                            <br>
+                            Available on: Fri, Sat.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Gerald Gems</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 8
+                            <br>
+                            Available on: Mon, Tues, Thurs.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Callum Kanes</h3>
+                        <p align="left">Birmingham</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 5
+                            <br>
+                            Available on: Mon, Fri, Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Casie Cones</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 6
+                            <br>
+                            Available on: Tues, Thurs.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Wesley Wecks</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 12
+                            <br>
+                            Available on: Mon, Tues, Fri.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+            </div>    
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL OUTDOORS -->
+        <div data-role="page" id="Outdoors" class="outdoors">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <a href="#Search" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline">Back</a> <!-- Back button -->
+            <div data-filtertext = "true" data-filter="true" data-filter="true" data-inset="true">
+
+                <div data-role="collapsible">
+                    <h4>Filter Price/Availability</h4>
+                    <div class="buttons">
+
+                        <br>
+                        <h4 style="margin-bottom: 0;">Days of the week: </h4>
+                        <br>
+                        <button type="button" data-inline="true">M</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">W</button>
+                        <button type="button" data-inline="true">T</button>
+                        <button type="button" data-inline="true">F</button>
+                        <button type="button" data-inline="true">S</button>
+                        <button type="button" data-inline="true">S</button>
+
+                    </div>
+                    <div data-role="rangeslider">
+                        <h4 style="margin-bottom: 20px;">Price: </h4>
+                        <input type="range" name="price-min" id="price-min" value="20" min="0" max="30">
+
+                        <input type="range" name="price-max" id="price-max" value="45" min="20" max="45">
+                    </div>
+                </div>
+
+                <ul data-role="listview" >
+                    <li><a href="#" >
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Nate Waters</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 5
+                            <br>
+                            Available on: Mon, Wed, Fri.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Tom Harrison</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 9
+                            <br>
+                            Available on: Mon, Wed, Fri.
+                            <br>
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Shawn Mack</h3>
+                        <p align="left">Luton</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 4
+                            <br>
+                            Available on: Mon, Tues, Thurs.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Shane Evens</h3>
+                        <p align="left">Essex</p>
+                        <hr>
+                        <p align="center">
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 7
+                            <br>
+                            Available on: Fri, Sat, Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Evan Woolsmith</h3>
+                        <p align="left">Cornwall</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £10 per hour
+                            <br>
+                            Years of experience: 4
+                            <br>
+                            Available on: Mon, Wed, Sat.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Frank Floors</h3>
+                        <p align="left">Coventry</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 6
+                            <br>
+                            Available on: Mon.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Harry Jones</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £20 per hour
+                            <br>
+                            Years of experience: 8
+                            <br>
+                            Available on: Tues, Thurs, Sun.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <ul data-role="listview">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Wes Smiths</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Price Range: £15 per hour
+                            <br>
+                            Years of experience: 11
+                            <br>
+                            Available on: Mon, Tues.
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+            </div>    
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL PROFILE1 -->
+
+        <div data-role="page" id="profile">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <img src="themes/images/usericon.png" height="20%" width="20%">
+                <div class="center">
+                    <p>Jason Stanley</p>
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" style="float:right;">
+                        <input type="checkbox" name="favourite1" id="favourite1" class="custom">
+                        <label for="favourite1"><span class="fa fa-heart"></span></label>
+                    </fieldset>
+
+                    <a href="#Maps" ><img src="themes/images/location.png" width="10%" height="10%" style="float: left; padding-left: 1%; margin-bottom: 2px;"></a>
+
+                </div>
+                <br>
+                <br>
+                <b style="float:left;">London</b>
+                <br>
+                <hr>
+                Price Range: £30 per hour
+                <br>
+                Years of experience: 10
+                <br>
+                Available on: Tuesdays,Thursdays and Saturdays.
+                <hr>
+                <i style="float: left" class="number">+44 7722235321</i>
+                <i style="float: right" class="email">JStanley@gmail.com</i>
+                <br>
+                <hr>
+                <img src="themes/images/plumbingpic1.png" height="15%" width="100%">
+                <hr>
+                <img src="themes/images/plumbingpic.png" height="15%" width="100%">
+                <hr>
+
+
+            </div><!-- /content -->
+            <p class="para">As you see above I am a specialist in plumbing, I have worked many years in the same field giving great customer service
+                and recieving excellent feedback on my work.
+                <br>
+                If you wish to have anything fixed then go ahead and book.
+            </p>
+            <hr>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#book" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Book Now</a>
+                </div>
+
+                <div class="ui-block-b">
+                    <a href="#reviews" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Leave a Review</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL PROFILE2 -->
+
+        <div data-role="page" id="profile2">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <img src="themes/images/usericon.png" height="20%" width="20%">
+                <div class="center">
+                    <p>Steve Johnson</p>
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" style="float:right;">
+                        <input type="checkbox" name="favourite2" id="favourite2" class="custom">
+                        <label for="favourite2"><span class="fa fa-heart"></span></label>
+                    </fieldset>
+
+                    <button href="#" class="ui-btn ui-btn-inline" style="float:left;">
+                        <i class="material-icons" style="font-size:16px">add_location</i>
+                    </button>
+                </div>
+                <br>
+                <br>
+                <b style="float:left;">London</b>
+                <br>
+                <hr>
+                Price Range: £15 per hour
+                <br>
+                Years of experience: 7
+                <br>
+                Available on: Tuesdays,Wednesdays and Fridays.
+                <hr>
+                <i style="float: left" class="number">+44 7896543729</i>
+                <i style="float: right" class="email">SJohnson@gmail.com</i>
+                <br>
+                <hr>
+                <img src="themes/images/plumbingpic1.png" height="15%" width="100%">
+                <hr>
+                <img src="themes/images/plumbingpic.png" height="15%" width="100%">
+                <hr>
+
+
+            </div><!-- /content -->
+            <p class="para">As you see above I am a specialist in many things, I have many years of work experience.
+                <br>
+                Any plumbing jobs, I am available.
+            </p>
+            <hr>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#book" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Book Now</a>
+                </div>
+
+                <div class="ui-block-b">
+                    <a href="#reviews" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Leave a Review</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL PROFILE3 -->
+
+        <div data-role="page" id="profile3">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <img src="themes/images/usericon.png" height="20%" width="20%">
+                <div class="center">
+                    <p>Ashleigh Jones</p>
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" style="float:right;">
+                        <input type="checkbox" name="favourite3" id="favourite3" class="custom">
+                        <label for="favourite3"><span class="fa fa-heart"></span></label>
+                    </fieldset>
+
+                    <button href="#" class="ui-btn ui-btn-inline" style="float:left;">
+                        <i class="material-icons" style="font-size:16px">add_location</i>
+                    </button>
+                </div>
+                <br>
+                <br>
+                <b style="float:left;">London</b>
+                <br>
+                <hr>
+                Price Range: £20 per hour
+                <br>
+                Years of experience: 2
+                <br>
+                Available on: Fri,Sat and Sun.
+                <hr>
+                <i style="float: left" class="number">+44 7765849321</i>
+                <i style="float: right" class="email">AJones@gmail.com</i>
+                <br>
+                <hr>
+                <img src="themes/images/plumbingpic1.png" height="15%" width="100%">
+                <hr>
+                <img src="themes/images/plumbingpic.png" height="15%" width="100%">
+                <hr>
+
+
+            </div><!-- /content -->
+            <p class="para">I have a passion in fixing things and giving the best customer service possible.
+                <br>
+                Please contact me.
+            </p>
+            <hr>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#book" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Book Now</a>
+                </div>
+
+                <div class="ui-block-b">
+                    <a href="#reviews" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Leave a Review</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL PROFILE4 -->
+
+        <div data-role="page" id="profile4">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <img src="themes/images/usericon.png" height="20%" width="20%">
+                <div class="center">
+                    <p>Damien White</p>
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" style="float:right;">
+                        <input type="checkbox" name="favourite4" id="favourite4" class="custom">
+                        <label for="favourite4"><span class="fa fa-heart"></span></label>
+                    </fieldset>
+
+                    <button href="#" class="ui-btn ui-btn-inline" style="float:left;">
+                        <i class="material-icons" style="font-size:16px">add_location</i>
+                    </button>
+                </div>
+                <br>
+                <br>
+                <b style="float:left;">London</b>
+                <br>
+                <hr>
+                Price Range: £25 per hour
+                <br>
+                Years of experience: 20
+                <br>
+                Available on: Monday,Thursday and Saturday.
+                <hr>
+                <i style="float: left" class="number">+44 7865478932</i>
+                <i style="float: right" class="email">DWhite@gmail.com</i>
+                <br>
+                <hr>
+                <img src="themes/images/plumbingpic1.png" height="15%" width="100%">
+                <hr>
+                <img src="themes/images/plumbingpic.png" height="15%" width="100%">
+                <hr>
+
+
+            </div><!-- /content -->
+            <p class="para">Been in the field of work for 20 years, experienced for the most difficult jobs
+                <br>
+                Book me on my available dates.
+            </p>
+            <hr>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#book" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Book Now</a>
+                </div>
+
+                <div class="ui-block-b">
+                    <a href="#reviews" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Leave a Review</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- FAVOURITES PAGE -->
+
+        <div data-role="page" id="Favourites">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed" class="">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content" align="center">
+
+                <div id="favourite-content"><p>My favourites: </p></div>
+                <!--                <button>mailto</button>-->
+
+
+                <br>
+                <form 
+                      action="mailto:w1647965@my.westminster.ac.uk?subject=FavouritesList&body="
+                      method="POST"
+                      enctype="multipart/form-data"
+                      name="EmailTestForm">
+                    <input type="submit" value="Email Your Favourites List!">
+                </form>
+
+                <!--
+<form action="" method="post">
+Email: <input type="text" name="email"><br>
+Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+-->
+
+
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer"> <!-- makes the footer stay at the bottom -->
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- CONTRACTOR -->
+        <div data-role="page" id="Contractor">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Individual" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Individual</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <!--<a href="#Home" data-transition="slide" data-direction="reverse">Back</a>-->
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+            <a href="#Home" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="border: 0;" ><img src="themes/images/back.png" style="width: 20px;"></a> <!-- Back button -->
+            <div role="main" class="ui-content">
+
+                <div align="center">
+                    <img src="themes/images/handymanicons.png" alt="Individual" height="80%" width="80%"><br>
+
+                    <hr>
+                    What Services do you have to offer?<br>
+                </div>
+                <hr>
+                Are you trained in one of the following:<br>
+
+                <ul>
+                    <li>Plumbing</li>
+                    <li>Repairs</li>
+                    <li>Electricals</li>
+                    <li>Painting</li>
+                    <li>Tiling</li>
+                    <li>Outdoors</li>
+                </ul>
+
+                If so, you should apply to become a contractor!
+                <hr>
+                <div align="center">
+                    <img src="themes/images/apply.png" alt="Apply" height="30%" width="30%"><br>
+                    <a href="#Apply" class="ui-btn ui-btn-inline" data-transition="slide" width="50" height="60">Apply Here</a>
+                </div>
+                <hr>
+            </div><!-- /content -->
+
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Contractor" data-theme="b"><img src="themes/images/HomeIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Jobs" data-theme="b"><img src="themes/images/JobsIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- APPLICATION FORM -->
+        <div data-role="page" id="Apply">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Individual" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Individual</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <a href="#Contractor" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="border: 0;" ><img src="themes/images/back.png" style="width: 20px;"></a> <!-- Back button -->
+            <div role="main" class="ui-content">
+                <a href="#transitionExample" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">   
+                    Click me to see the benefits of working with us!
+                </a>
+
+                <div data-role="popup" id="transitionExample" class="ui-content" data-theme="a">
+                    <p>
+                        <li>Opportunities to interact with a large network of people</li>
+                        <li>Progress and become recognized for the skills you have</li>
+                        <li>Get jobs weekly</li>
+                        <li>Obtain loyal customers</li>
+                        <br>
+                        <iframe width="320" height="215" src="https://www.youtube.com/embed/ONSmv4olOWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </p>
+                </div>
+                
+                Please choose the service you would like to apply for:<br>
+               
+                <!-- DROPDOWN -->
+                <select>
+                    <option value="Plumbing">Plumbing</option>
+                    <option value="Repairs">Repairs</option>
+                    <option value="Electricals">Electricals</option>
+                    <option value="Tiling">Tiling</option>
+                    <option value="Outdoors">Outdoors</option>
+                </select>
+
+                <form>
+                    First Name:<br>
+                    <input type="text" name="firstname">
+                    Last Name:<br>
+                    <input type="text" name="lastname">
+                    Email Address:<br>
+                    <input type="text" name="emailaddress">
+                    Phone Number:<br>
+                    <input type="text" name="phonenumber">
+                </form>
+
+                <hr>
+                <div align="center">
+                    <img src="themes/images/upload.png" alt="Apply" height="15%" width="15%"><br>
+                    Upload Previous Work
+                </div>
+                <hr>
+                <div align="center">
+                    <a href="#Success" data-transition="slide" class="ui-btn ui-btn-inline">Submit Application</a>
+                </div>
+
+            </div><!-- /content -->
+
+
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Contractor" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Jobs" data-theme="b"><img src="themes/images/JobsIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- Successful Application -->
+        <div data-role="page" id="Success">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Individual" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Individual</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" class="div" align="center">
+                <hr>
+                <img src="themes/images/tick.png" alt="Tick" height="15%" width="15%"><br>
+
+                Your Application has been Submitted Successfully!<br>
+                We will be in touch with you very soon!
+                <hr>
+
+                <a href="#Contractor" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline">Back to Home</a> <!-- Back button -->
+                <hr>
+            </div><!-- /content -->
+
+            <div data-role="footer" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Contractor" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Jobs" data-theme="b"><img src="themes/images/JobsIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- INDIVIDUAL REVIEW -->
+
+        <div data-role="page" id="reviews">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <!--                <img src="themes/images/usericon.png" height="20%" width="20%" style="margin-top: 10%">-->
+                <div class="center">
+                    <img src="themes/images/usericon.png" height="20%" width="20%" style="margin-top:5%">
+                    <p>Jason Stanley</p>
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" style="float:right;">
+                        <input type="checkbox" name="favourite1" id="favourite1" class="custom">
+                        <label for="favourite1"><span class="fa fa-heart"></span></label>
+                    </fieldset>
+
+                    <button href="#" class="ui-btn ui-btn-inline" style="float:left;">
+                        <i class="material-icons" style="font-size:16px">add_location</i>
+                    </button>
+                </div>
+                <br>
+                <br>
+                <b style="float:left;">London</b>
+                <br>
+                <hr>
+            </div><!-- /content -->
+            <div style="margin-left:5%; margin-right:5%;">
+                <img src="themes/images/usericon.png" height="10%" width="10%" style="float:left;">        
+                <img src="themes/images/stars.png" style="float:right; height:25%; width:25%; margin-right:5%; margin-top:3%;">
+                <b><p style="margin-left:15%; margin-right:15%; width:50%;">Mary J.</p></b>
+                <br>
+                <p>Lovely man installed my dishwasher, everything works perfectly, highly recommend!</p>
+            </div>
+            <hr>
+            <div style="margin-left:5%; margin-right:5%;">
+                <img src="themes/images/usericon.png" height="10%" width="10%" style="float:left;">        
+                <img src="themes/images/stars.png" style="float:right; height:25%; width:25%; margin-right:5%; margin-top:3%;">
+                <b><p style="margin-left:15%; margin-right:15%; width:50%;">Harry P.</p></b>
+                <br>
+                <p>Fixed the leaking tap I had for weeks, great service!</p>
+            </div>
+            <hr>
+            <div style="margin-left:5%; margin-right:5%;">
+                <img src="themes/images/usericon.png" height="10%" width="10%" style="float:left;">        
+                <img src="themes/images/stars.png" style="float:right; height:25%; width:25%; margin-right:5%; margin-top:3%;">
+                <b><p style="margin-left:15%; margin-right:15%; width:50%;">David S.</p></b>
+                <br>
+                <p>No problems when Jason came to sort out my washing machine, everything up and running again!</p>
+            </div>
+            <hr>
+            <br>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#book" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Book Now</a>
+                </div>
+
+                <div class="ui-block-b">
+                    <a href="#leavereviews" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Leave a Review</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- INDIVIDUAL WRITE REVIEW -->
+
+        <div data-role="page" id="leavereviews">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <!--                <img src="themes/images/usericon.png" height="20%" width="20%" style="margin-top: 10%">-->
+                <div>
+                    <p>Leave a review about Jason Stanley:</p>
+                    <div style="border: 2px solid; width: 90%; height: 200px;">
+
+                    </div>
+                    <br>
+                    <hr>
+                    <img src="themes/images/upload.png" height="20%" width="20%" style="margin-top:5%">
+                    <p>Upload an Image</p>
+                    <hr>
+                    <br>
+                    <br>
+                    <img src="themes/images/emptystars.png" height="40%" width="40%" style="margin-top:5%">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <hr>
+
+                </div>
+
+            </div><!-- /content -->
+            <br>
+            <div align="center">
+                <a href="#Success1" class="ui-btn ui-btn-inline" data-transition="slide" style="margin-bottom:0%; width:90%;">Submit Review</a>
+            </div>
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIconFull.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- Successful Application -->
+        <div data-role="page" id="Success1">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" class="div" align="center">
+                <hr>
+                <img src="themes/images/tick.png" alt="Tick" height="15%" width="15%"><br>
+
+                Your Application has been Submitted Successfully!<br>
+                Thank you for your time, we hope to see you soon!
+                <hr>
+                <a href="#Individual" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="margin-bottom:0%; width:100%;">Back to Home</a> <!-- Back button -->
+                <hr>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- Individual Book -->
+        <div data-role="page" id="book">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center">
+                <br>
+                <br>
+                <!-- DROPDOWN -->
+                <select>
+                    <option value="Select">Select Issue</option>
+                    <option value="Dish">Installing a Dishwasher</option>
+                    <option value="Wash">Installing a Washing Machine</option>
+                    <option value="Pipe">Repairing a Broken Pipe</option>
+                    <option value="Other">Other</option>
+                </select>
+                <br>
+                <br>
+                <input align-text="center"
+                       type="date" id="start" name="trip-start"
+                       value="2018-07-22"
+                       min="2018-01-01" max="2018-12-31">
+                <br>
+                <p>Any Additional Information:</p>
+                <div style="border: 2px solid; width: 90%; height: 200px;">
+
+                </div>
+                <br>
+                <div style="border: 2px solid; width: 90%;">
+                    <img src="themes/images/upload.png" height="20%" width="20%" style="margin-top:5%">
+                    <p>Upload an Image</p>
+                </div>
+                <br>
+                <a href="#succreview" class="ui-btn ui-btn-inline" data-transition="slide" style="margin:0%; width:90%;">Request Booking</a>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- Successful Application -->
+        <div data-role="page" id="succreview">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" class="div" align="center">
+                <hr>
+                <img src="themes/images/paypal.png" alt="Tick" height="30%" width="30%"><br>
+
+
+                <hr>
+                <div>
+                    <a href="#qr" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="margin-bottom:2%; width:100%;">Proceed to Payment</a> <!-- Back button -->
+                </div>
+                <hr>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- QR CODE -->
+        <div data-role="page" id="qr">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+            </div><!-- /header -->
+
+            <div role="main" align="center" class="ui-content-a">
+
+                <form id="frmBooking" name="bookingForm" action="_self">
+                    <input id="item_name" name="item_name" type="text" value="Booking Charge">
+                    <input id="total_value" name="total_value" type="text" value="£30">
+                    <button id="customButton">Purchase</button>
+                </form>
+                <div align="center" id="thankyouPayment"> </div>
+
+
+                <iframe frameborder="0" allowtransparency="true" src="./stripe_files/index-af884f1198ee56a57968.html" name="stripe_checkout_app" class="stripe_checkout_app" style="z-index: 2147483647; display: none; background: rgba(0, 0, 0, 0.00392157); border: 0px none transparent; overflow-x: hidden; overflow-y: auto; visibility: visible; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%;"></iframe>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- MAPS -->
+        <div data-role="page" id="Maps">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor View</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+                <!-- <h1>Rewards</h1> -->
+            </div><!-- /header -->
+
+            <div role="main" align="center" >
+                <a href="#profile" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-inline" style="float: left; border: 0;"><img src="themes/images/back.png" style="width: 20px;"></a> <!-- Back button -->
+
+                <div id="map"></div>
+                <script>
+                    function initMap() {
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 15,
+                            center: {lat: 51.519953, lng: -0.142881},
+                            mapTypeId: 'roadmap'
+                        });
+
+                        // Define the LatLng coordinates for the polygon's path.
+                        var triangleCoords = [
+                            {lat: 51.520721, lng: -0.140356},
+                            {lat: 51.522303, lng: -0.155382},
+                            {lat: 51.516759, lng: -0.142749},
+                            {lat: 51.520721, lng: -0.140356}
+                        ];
+
+                        // Construct the polygon.
+                        var UoW = new google.maps.Polygon({
+                            paths: triangleCoords,
+                            strokeColor: '#FF0000',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#FF0000',
+                            fillOpacity: 0.35
+                        });
+                        UoW.setMap(map);
+                    }
+
+                </script>
+
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ6wOo-T7CPVDf_9qAUX--0kz16x370Fg&callback=initMap">
+                </script>
+
+
+            </div>
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- BOOKINGS -->
+        <div data-role="page" id="Bookings">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Contractor</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+
+
+
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+                <!-- <h1>Bookings</h1> -->
+            </div><!-- /header -->
+
+            <div role="main" align="center" >
+
+
+
+
+                <ul data-role="listview" style="margin:2%; border: 1px solid #797979;">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Jason Stanley</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Date of Booking: 1/12/19
+                            <br>
+                            Reason for Booking: Leak / Broken Pipe
+
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+
+
+
+
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIconFull.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+        <!-- Jobs -->
+        <div data-role="page" id="Jobs">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 220px;">
+                <h4 style="text-align: center;">
+                    <hr>
+                    <a href="#Individual" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Switch to Individual</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 160px;">Settings</a>
+                    <hr>
+
+
+
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+                <!-- <h1>Jobs</h1> -->
+            </div><!-- /header -->
+
+            <div role="main" align="center" >
+
+                <ul data-role="listview" style="margin:2%; border: 1px solid #797979;">
+                    <li><a href="#">
+                        <img src="themes/images/usericon.png" class="ui-li-thumb">
+                        <h3 align="center">Mary S</h3>
+                        <p align="left">London</p>
+                        <hr>
+                        <p align="center">
+
+                            Job Date: 01/12/19
+                            <br>
+                            Reason for Booking: Leak / Broken Pipe
+                        </p>
+                        <hr>
+                        <p align="center">View Profile</p>
+                        </a>
+                </ul>
+
+                <div style="margin:2%; margin-top: 9px; border: 1px solid #797979;" align="center">
+
+                    <h4 >There are currently no job requests.</h4>
+
+                </div>
+
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Contractor" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Jobs" data-theme="b"><img src="themes/images/JobsIconFull.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+        <!-- REWARDS -->
+        <div data-role="page" id="Rewards">
+            <div class="panel" id="panel" data-role="panel" data-position="right" data-display="overlay" style="background-color: #F9F9F9; width: 375px;">
+                <h4 style="text-align: center;">
+                    <a href="#Contractor" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 250px;">Switch to Contractor View</a>
+                    <hr>
+                    <a href="#QRCode" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 250px;">Scan a QR Code</a>
+                    <hr>
+                    <a href="#Rewards" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 250px;">Rewards</a>
+                    <hr>
+                    <a href="#Login" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 250px;">Login</a>
+                    <hr>
+                    <a href="#SignUp" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 250px;">Sign Up</a>
+                    <hr>
+                    <a href="#Settings" class="ui-btn-inline" data-role="button" data-iconshadow="false" data-inline="true" style="padding: 10px; width: 250px;">Settings</a>
+                    <hr>
+
+
+
+                </h4>
+            </div>
+            <div data-role="header" data-position="fixed">
+                <a href="#panel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true" style="border: none; margin: 1%; width: 30px; height: 30px;"></a>
+                <img src="themes/images/Logo.png" width="40px" height="40px" style="margin-top: 1%; margin-left: 1%;">
+                <!-- <h1>Rewards</h1> -->
+            </div><!-- /header -->
+
+            <div role="main" align="center" >
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <h1>Want Rewards?</h1>
+
+
+
+                        <h2>After every five bookings you make, you receive a free booking!</h2>
+                        <br>
+
+
+                    </div>
+                </div>
+
+                <img src="themes/images/circle.png" style="width: 70px; margin: 10px;">
+                <img src="themes/images/circle.png" style="width: 70px; margin: 10px;">
+                <img src="themes/images/circle.png" style="width: 70px; margin: 10px;">
+                <img src="themes/images/circle.png" style="width: 70px; margin: 10px;">
+                <img src="themes/images/circle.png" style="width: 70px; margin: 10px;">
+
+                <br>
+
+
+
+            </div><!-- /content -->
+
+            <div data-role="footer" data-position="fixed" class="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Individual" data-theme="b"><img src="themes/images/HomeIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Search" data-theme="b"><img src="themes/images/SearchIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Favourites" data-theme="b"><img src="themes/images/FavouritesIcon.png" width="30px" height="30px"></a></li>
+                        <li><a href="#Bookings" data-theme="b"><img src="themes/images/BookingIcon.png" width="30px" height="30px"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+        <script>
+
+            var div1 = document.getElementById("profile1"); 
+            var div2 = document.getElementById("profile2"); 
+            var div3 = document.getElementById("profile3"); 
+            var div4 = document.getElementById("profile4"); 
+            $(document).on( 'pagecontainerbeforehide', 'body', function( event, ui){
+                //do something
+                if ( ui.nextPage.attr('id')== "Favourites") {
+                    $("#favourite-content").html ("");
+                    if ($( "#favourite1" ).is( ":checked" )) {
+                        $("#favourite-content").append(div1);
+                    }
+                    if ($( "#favourite2" ).is( ":checked" )) {
+                        $("#favourite-content").append(div2);
+                    }
+                    if ($( "#favourite3" ).is( ":checked" )) {
+                        $("#favourite-content").append(div3);
+                    }
+                    if ($( "#favourite4" ).is( ":checked" )) {
+                        $("#favourite-content").append(div4);
+                    }
+                }
+            });
+
+            var d = document.getElementById("favourite-content");
+            var con = d.textContent;
+            var email = 'w1647965@my.westminster.ac.uk';
+            var subject = 'Favourites';
+            $('form').click(function() {
+
+                var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + con;
+
+                win = window.open(mailto_link, 'emailWindow');
+                //                if (win && win.open && !win.closed) win.close();
+
+            });
+
+            jQuery(function($) {
+                var $form = $('#frmBooking');
+                var handler = StripeCheckout.configure({
+                    key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                    token: function(token) {
+                        // Use the token to create the charge with a server-side script.
+                        // You can access the token ID with `token.id`
+
+                        //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                        if(token.id){
+                            $("#thankyouPayment").html("Thank you, your payment was successful!");
+
+                            //You can also use the following code to re-submit the form content to another file for further processing.
+                            //Don't forget to add action to your form
+                            //$form.get(0).submit();
+
+                            //Or save form data locally, using local storage.
+                        }
+                    }
+                });
+
+                $('#customButton').on('click', function(e) {
+                    // Open Checkout with further options
+                    handler.open({
+                        name: 'Service Booking',
+                        currency: 'gbp',
+                        description: $('#item_name').val(),
+                        amount: $('#total_value').val() * 100
+                    });
+                    e.preventDefault();
+                });
+
+                // Close Checkout on page navigation
+                $(window).on('popstate', function() {
+                    handler.close();
+                });
+            });
+
+
+        </script>
+
+
+
+    </body>
+
+</html>
+
+
+
